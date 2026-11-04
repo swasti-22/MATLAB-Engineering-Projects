@@ -2,9 +2,9 @@
 
 ## 1. Project Overview
 
-This project demonstrates the fundamental operations of signal addition and subtraction using MATLAB. Two sinusoidal signals are generated, and mathematical operations are performed on them to obtain resultant signals.
+This project demonstrates the fundamental mathematical operations of signal addition and subtraction using MATLAB.
 
-The project explores the principle of superposition and helps understand how the amplitude, frequency and phase of individual signals affect their resultant waveform.
+Two sinusoidal signals are generated and combined through point-by-point addition and subtraction. The resulting waveforms are visualised to understand the principle of superposition and the influence of signal amplitudes on the resultant waveform.
 
 ## 2. Objectives
 
@@ -12,7 +12,7 @@ The project explores the principle of superposition and helps understand how the
 - Perform signal addition and subtraction.
 - Visualise the original and resultant waveforms.
 - Understand the principle of superposition.
-- Analyse the effect of signal parameters on the resultant waveform.
+- Analyse the effect of amplitude differences on resultant signals.
 
 ## 3. Mathematical Background
 
@@ -32,15 +32,11 @@ x_2(t)=A_2\sin(2\pi f_2t)
 
 ### Signal Addition
 
-The resultant signal obtained by adding the two input signals is:
-
 \[
 y_{\text{add}}(t)=x_1(t)+x_2(t)
 \]
 
 ### Signal Subtraction
-
-The resultant signal obtained by subtracting the second signal from the first is:
 
 \[
 y_{\text{sub}}(t)=x_1(t)-x_2(t)
@@ -48,24 +44,45 @@ y_{\text{sub}}(t)=x_1(t)-x_2(t)
 
 ## 4. Simulation Parameters
 
+### Original Signals
+
+| Parameter | Signal 1 | Signal 2 |
+|---|---:|---:|
+| Amplitude | 1 | 1 |
+| Frequency | 2 Hz | 2 Hz |
+| Initial Phase | 0° | 0° |
+
+### Addition Experiment
+
 | Parameter | Signal 1 | Signal 2 |
 |---|---:|---:|
 | Amplitude | 3 | 1 |
 | Frequency | 2 Hz | 2 Hz |
-| Sampling Frequency | 1000 Hz | 1000 Hz |
 | Initial Phase | 0° | 0° |
 
-**Simulation Duration:** 2 seconds
+### Subtraction Experiment
+
+| Parameter | Signal 1 | Signal 2 |
+|---|---:|---:|
+| Amplitude | 3 | 5 |
+| Frequency | 2 Hz | 2 Hz |
+| Initial Phase | 0° | 0° |
+
+**Common Simulation Parameters:**
+
+- Sampling Frequency: 1000 Hz
+- Simulation Duration: 2 seconds
+- Sampling Period: 0.001 seconds
 
 ## 5. MATLAB Implementation
 
-The project is divided into three MATLAB scripts:
+The project consists of three independent MATLAB scripts:
 
 | Script | Description |
 |---|---|
-| `signal_addition_subtraction.m` | Generates and displays the original signals |
-| `signal_addition.m` | Performs and plots signal addition |
-| `signal_subtraction.m` | Performs and plots signal subtraction |
+| `original_signals.m` | Generates and displays the two original sinusoidal signals |
+| `signal_addition.m` | Performs and visualises signal addition |
+| `signal_subtraction.m` | Performs and visualises signal subtraction |
 
 ### MATLAB Functions Used
 
@@ -73,55 +90,72 @@ The project is divided into three MATLAB scripts:
 - `plot()` – Displays signal waveforms.
 - `hold on` – Allows multiple signals to be plotted in the same figure.
 - `grid on` – Displays the plot grid.
-- `xlabel()` and `ylabel()` – Labels the graph axes.
+- `xlabel()` and `ylabel()` – Label the graph axes.
 - `legend()` – Identifies plotted signals.
 - `exportgraphics()` – Exports simulation figures as image files.
+- `mkdir()` – Creates the Results directory if it does not exist.
 
 ## 6. Simulation Results
 
 ### 6.1 Original Signals
 
-Both input sinusoidal signals are generated and displayed in the same figure.
+Both input signals have identical amplitudes, frequencies and phases. Therefore, their waveforms overlap.
 
 ![Original Signals](Results/original_signals.png)
 
 ### 6.2 Signal Addition
 
-The two input signals are added point by point to obtain the resultant waveform.
+The input signals have amplitudes of 3 and 1, respectively.
+
+Since their frequencies and phases are identical, the resultant amplitude is:
+
+\[
+A_{\text{resultant}}=3+1=4
+\]
 
 ![Signal Addition](Results/signal_addition.png)
 
 ### 6.3 Signal Subtraction
 
-The second input signal is subtracted from the first to obtain the resultant waveform.
+The input signals have amplitudes of 3 and 5, respectively.
+
+The resultant signal is:
+
+\[
+y(t)=3\sin(4\pi t)-5\sin(4\pi t)
+\]
+
+\[
+y(t)=-2\sin(4\pi t)
+\]
+
+The resultant waveform has an amplitude magnitude of 2 and is inverted relative to the original sine waveform.
 
 ![Signal Subtraction](Results/signal_subtraction.png)
 
 ## 7. Observations
 
-For the initial simulation parameters, both signals have identical amplitudes, frequencies and phases.
-
-- The original signals overlap because their parameters are identical.
-- Signal addition produces a resultant sinusoidal signal with amplitude 2.
-- Signal subtraction produces a zero-valued signal because the two input signals are identical.
-
-These results demonstrate constructive addition and complete cancellation for identical, in-phase signals.
+- The original signals overlap because they have identical amplitudes, frequencies and phases.
+- Signal addition produces a resultant amplitude of 4.
+- Signal subtraction produces an inverted sinusoidal waveform with an amplitude magnitude of 2.
+- The resultant waveform depends on the amplitudes, frequencies and relative phases of the input signals.
 
 ## 8. Key Learnings
 
-- Understood the principle of signal superposition.
-- Learned to perform mathematical operations on signal vectors in MATLAB.
-- Explored the effect of adding and subtracting sinusoidal signals.
-- Practised waveform visualisation and figure export.
-- Understood how signal parameters influence resultant waveforms.
+- Understood the mathematical principle of signal superposition.
+- Learned to perform element-wise operations on signal vectors.
+- Explored the effects of signal addition and subtraction.
+- Understood amplitude reinforcement and waveform inversion.
+- Practised MATLAB waveform visualisation and figure export.
 
 ## 9. Future Improvements
 
-- Experiment with signals having different amplitudes.
-- Analyse the effect of different frequencies.
-- Investigate phase differences between input signals.
-- Explore constructive and destructive interference under different conditions.
+- Experiment with signals having different frequencies.
+- Investigate the effect of phase differences.
+- Study constructive and destructive interference.
+- Compare resultant waveforms under different signal conditions.
 
 ---
 
 **Project 02 of 20 | MATLAB Engineering Challenge**
+
