@@ -45,5 +45,5 @@ fprintf('Signal 1 Frequency: %g Hz\n', f1);
 fprintf('Signal 2 Frequency: %g Hz\n', f2);
 
 % 8. Save the plot
-exportgraphics(gcf, 'Results/frequency_variation.png', ...
+exportgraphics(gcf, 'Results/frequency_variation.final.png', ...
     'Resolution', 300);
