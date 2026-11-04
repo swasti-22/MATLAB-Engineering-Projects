@@ -35,3 +35,7 @@ legend('Sine Wave', 'Cosine Wave');
 % 6. Set axis limits
 xlim([0 2]);
 ylim([-1.5 1.5]);
+
+% 7. Save the plot
+exportgraphics(gcf, 'Results/sine_cosine.png', ...
+    'Resolution', 300);
