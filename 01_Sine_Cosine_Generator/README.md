@@ -132,6 +132,6 @@ Compares two sinusoidal signals with phase offsets of 0° and 90°, while keepin
 
 ---
 
-**Project 01 of my 50-Day Engineering Project Challenge.**
+**Project 01 of my 20-Day MATLAB-Engineering Project Challenge.**
 
 *Learning, experimenting and building one project at a time.* ♡
