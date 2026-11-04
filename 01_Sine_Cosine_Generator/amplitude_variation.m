@@ -44,6 +44,6 @@ fprintf('Frequency: %g Hz\n', f);
 fprintf('Signal 1 Amplitude: %g\n', A1);
 fprintf('Signal 2 Amplitude: %g\n', A2);
 
-% 8. Save the plot
+%8. Save the plot
 exportgraphics(gcf, 'Results/amplitude_variation.png', ...
     'Resolution', 300);
